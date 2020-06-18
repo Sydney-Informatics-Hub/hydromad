@@ -9,3 +9,4 @@ inst/doc/*.log
 web/index.html
 R/.DS_Store
 .DS_Store
+docs/.DS_store
