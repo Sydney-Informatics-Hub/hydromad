@@ -7,3 +7,5 @@ inst/doc/*.tex
 inst/doc/*.aux
 inst/doc/*.log
 web/index.html
+R/.DS_Store
+.DS_Store
