@@ -175,7 +175,7 @@
 #' 
 #' Clark, Martyn P., and Dmitri Kavetski (2010) Ancient Numerical Daemons of
 #' Conceptual Hydrological Modeling: 1. Fidelity and Efficiency of Time
-#' Stepping Schemes.” Water Resources Research 46 (10).
+#' Stepping Schemes. \emph{Water Resources Research} 46 (10).
 #' \url{http://dx.doi.org/10.1029/2009WR008894}
 #' @keywords models
 #' @examples
@@ -290,7 +290,7 @@
 
 #' GR4J rainfall runoff model
 #' 
-#' GR4J model (mode`le du Ge´nie Rural a` 4 parame`tres Journalier).
+#' GR4J model (mode le du Genie Rural a 4 parametres Journalier).
 #' 
 #' The default parameter ranges were taken from the "80% confidence intervals"
 #' given in Perrin et. al. (2003).
@@ -657,7 +657,6 @@
 #' (recommended).
 #' @keywords models
 #' @examples
-#' 
 #' ## view default parameter ranges:
 #' str(hydromad.options("dbm"))
 #' 
@@ -665,12 +664,12 @@
 #' mod0 <- hydromad(HydroTestData, sma = "dbm", routing = "expuh")
 #' mod0
 #' 
-#' ## simulate with some arbitrary parameter values
+#' # simulate with some arbitrary parameter values
 #' mod1 <- update(mod0, power = 0.5, qlag = 0, tau_s = 10)
 #' 
 #' xyplot(cbind(HydroTestData, dbm.Q = predict(mod1)))
 #' 
-#' ## show effect of increase/decrease in each parameter
+#' # show effect of increase/decrease in each parameter
 #' parRanges <- list(power = c(0.01, 0.9), qlag = c(-1, 2))
 #' parsims <- mapply(val = parRanges, nm = names(parRanges),
 #'   FUN = function(val, nm) {
@@ -678,14 +677,13 @@
 #'     hipar <- max(val)
 #'     names(lopar) <- names(hipar) <- nm
 #'     fitted(runlist(decrease = update(mod1, newpars = lopar),
-#'                    increase = update(mod1, newpars = hipar)))
-#'   }, SIMPLIFY = FALSE)
+#'                    increase = update(mod1, newpars = hipar)))}, SIMPLIFY = FALSE)
 #' 
 #' xyplot.list(parsims, superpose = TRUE, layout = c(1,NA),
 #'             main = "Simple parameter perturbation example") +
 #'   layer(panel.lines(fitted(mod1), col = "grey", lwd = 2))
 #' 
-         dbm = dbm.ranges(),
+#'         dbm = dbm.ranges() # this looks a tad odd, why is there a comma at the end here?
 
 
 #' Power law transfer function models
@@ -707,7 +705,7 @@
 #' the flow response and c defines the shape of the response curve near its
 #' peak. The c parameter appears twice in order to reduce interaction between
 #' the b and c parameters (in this form, the c parameter only influences the
-#' curvature near t = a, and doesn't influence the asymptote, which is
+#' curvature near t = a, and doesnt influence the asymptote, which is
 #' determined solely by the b parameter). The time for H to decrease to 0.5 is
 #' \eqn{a(2^(1/c) - 1)^(c/b)}. While this is a three parameter model, for
 #' \eqn{t >> a} only the b parameter is significant. Since the value of the a
@@ -823,7 +821,7 @@ hydromad.getOption <- function(name)
 #' @aliases hydromad.options hydromad.getOption
 #' @param name character giving the name of a setting.
 #' @param ...  new options can be defined, or existing ones modified, using one
-#' or more arguments of the form 'name = value' or by passing a list of such
+#' or more arguments of the form name = value or by passing a list of such
 #' tagged values.  Existing values can be retrieved by supplying the names (as
 #' character strings) of the components as unnamed arguments.
 #' @seealso \code{\link{hydromad}}

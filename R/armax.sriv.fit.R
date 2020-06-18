@@ -26,20 +26,20 @@
 #' c(2,1)))}.
 #' 
 #' @aliases armax.sriv.fit expuh.sriv.fit
-#' @param DATA a \code{\link{ts}}-like object with named columns: \describe{
+#' @param DATA A \code{\link{ts}}-like object with named columns: \describe{
 #' \item{list("U")}{ observed input time series. } \item{list("Q")}{ observed
 #' output time series. } }
-#' @param order the transfer function order. See \code{\link{armax}}.
-#' @param delay delay (lag time / dead time) in number of time steps. If
+#' @param order The transfer function order. See \code{\link{armax}}.
+#' @param delay Delay (lag time / dead time) in number of time steps. If
 #' missing, this will be estimated from the cross correlation function.
-#' @param noise.order
-#' @param fixed.ar
-#' @param \dots further arguments may include \describe{ \item{prefilter}{ }
+#' @param noise.order Needs a description
+#' @param fixed.ar Needs a description
+#' @param \dots Further arguments may include \describe{ \item{prefilter}{ }
 #' \item{initX}{ } \item{trace}{ ~~Describe \code{trace} here~~ } }
-#' @param fallback
-#' @param na.action
-#' @param epsilon
-#' @param max.iterations
+#' @param fallback Needs a description
+#' @param na.action Needs a description
+#' @param epsilon Needs a description
+#' @param max.iterations Needs a description
 #' @param quiet to suppress the message when re-fitting if non-physical poles
 #' (i.e. negative or imaginary poles) are detected.
 #' @return a \code{tf} object, which is a list with components
