@@ -19,16 +19,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/pr-fetch@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
-        run: |
-          install.packages('remotes')
-          remotes::install_cran("lintr")
-        shell: Rscript {0}
+        run: Rscript -e 'install.packages("lintr")'
 
       - name: Lint
-        run: lintr::lint_package()
+        run: Rscript -e 'lintr::lint_package()'
 
       - name: commit
         run: |
