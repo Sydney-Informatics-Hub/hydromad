@@ -15,6 +15,7 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
 
@@ -28,4 +29,12 @@ jobs:
 
       - name: Lint
         run: lintr::lint_package()
-        shell: Rscript {0}
+
+      - name: commit
+        run: |
+          git add \*.R
+          git commit -m 'Lint'
+
+      - uses: r-lib/actions/pr-push@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
