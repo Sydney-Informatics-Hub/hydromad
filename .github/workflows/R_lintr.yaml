@@ -1,12 +1,4 @@
-on:
-  push:
-    branches:
-      - master
-      - continuous_integration
-  pull_request:
-    branches:
-      - master
-      - continuous_integration
+on: [push, pull]
 
 name: R linter
 
@@ -27,6 +19,9 @@ jobs:
           install.packages('remotes')
           remotes::install_cran("lintr")
         shell: Rscript {0}
+
+      - name: enable annotations
+        shell: echo "::add-matcher::lintr-problem-matcher.json"
 
       - name: Lint
         run: if ( length(lintr::lint_package(linters = lintr::with_defaults(object_name_linter = NULL)) -> results)) { print.listof(results); quit(status=1) }
