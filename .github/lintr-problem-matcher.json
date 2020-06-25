@@ -4,7 +4,7 @@
             "owner": "R_lintr",
             "pattern": [
                 {
-                    "regexp": "^(.+):(\\d+):(\\d+):\\s([a-z]+):\\s(.+)$",
+                    "regexp": "^(.+):(\\d+):(\\d+):\\s([^ ]+)\\s(.+)$",
                     "file": 1,
                     "line": 2,
                     "column": 3,
