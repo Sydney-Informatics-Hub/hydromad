@@ -107,4 +107,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: docs/
+          path: check
