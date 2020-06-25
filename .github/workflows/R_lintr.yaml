@@ -30,4 +30,4 @@ jobs:
 
       - name: Lint
         run: lintr::lint_package(linters = lintr::with_defaults(object_name_linter = NULL))
-        shell: Rscript {0}
+        shell: Rscript -e {0}
