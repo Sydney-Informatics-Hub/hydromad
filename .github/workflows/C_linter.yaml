@@ -3,10 +3,12 @@ on:
     branches:
       - master
       - continuous_integration
+      - continuous_integration2
   pull_request:
     branches:
       - master
       - continuous_integration
+      - continuous_integration2
       
 name: C_linter
 
