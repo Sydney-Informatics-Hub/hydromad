@@ -21,10 +21,12 @@ jobs:
     
     - name: Make directory for artifact
       run: mkdir ${{ github.workspace }}/src/c_lint_artifact
+      shell: sh
 
     - name: Copy files to c_lint_artifact
       run: |
         cp ${{ github.workspace }}/src/*.c ${{ github.workspace }}/src/c_lint_artifact
+      shell: sh
     
     - name: Install clang-format
       run: |
@@ -33,6 +35,7 @@ jobs:
     - name: Run clang-format
       run: |
         find ${{ github.workspace }}/src/c_lint_artifact -name "*.c" | xargs clang-format --style="Google" -i
+      shell: sh
 
     - name: Upload C linter artifact
       if: failure()
