@@ -53,6 +53,7 @@
 #' head(flood, 20)
 #' xyplot(flood)
 #' @export
+#' @useDynLib hydromad swimp_core
 swimp <-
   function(flow.ML,
            thresh = 0,

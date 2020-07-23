@@ -179,6 +179,8 @@
 #' ) +
 #'   latticeExtra::layer(panel.lines(fitted(mod1), col = "grey", lwd = 2))
 #' @export
+#' @useDynLib hydromad sma_sac
+#' @useDynLib hydromad sma_sac_state
 sacramento.sim <-
   function(DATA,
            uztwm, uzfwm, uzk, pctim, adimp, zperc, rexp,

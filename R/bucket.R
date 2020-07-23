@@ -77,6 +77,7 @@
 #' ) +
 #'   layer(panel.lines(fitted(mod1), col = "grey", lwd = 2))
 #' @export
+#' @useDynLib hydromad sma_bucket
 bucket.sim <-
   function(DATA,
            Sb, fc = 1, a.ei = 0, M = 0, a.ss = 0,

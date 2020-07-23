@@ -93,6 +93,7 @@
 #' ) +
 #'   latticeExtra::layer(panel.lines(fitted(mod1), col = "grey", lwd = 2))
 #' @export
+#' @useDynLib hydromad sma_snow
 snow.sim <-
   function(DATA, Tmax, Tmin, kd, kf, rcap, Tmelt = Tmin,
            cr = 1, cs = 1, LSWE_0 = 0, ISWE_0 = 0,

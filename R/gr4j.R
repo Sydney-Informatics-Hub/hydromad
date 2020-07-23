@@ -164,6 +164,7 @@ gr4j.sim <-
     E[bad] <- 0
     COMPILED <- (hydromad.getOption("pure.R.code") == FALSE)
     if (COMPILED) {
+      #' @useDynLib hydromad sma_gr4j
       ans <- .C(sma_gr4j,
         as.double(P),
         as.double(E),
@@ -283,6 +284,7 @@ gr4jrouting.sim <-
 
     COMPILED <- (hydromad.getOption("pure.R.code") == FALSE)
     if (COMPILED) {
+      #' @useDynLib hydromad routing_gr4j
       ans <- .C(routing_gr4j,
         as.double(Q9),
         as.double(Q1),

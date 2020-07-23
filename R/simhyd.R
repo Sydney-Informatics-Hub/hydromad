@@ -27,6 +27,7 @@
 #' @param return_state Placeholder
 
 #' @export
+#' @useDynLib hydromad _hydromad_simhyd_sim
 simhyd.sim <-
   function(DATA,
            INSC, COEFF,

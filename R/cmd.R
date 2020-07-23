@@ -125,6 +125,7 @@
 #'   layer(panel.lines(fitted(mod1), col = "grey", lwd = 2))
 #' @rdname IHACRES.CMD.model
 #' @export
+#' @useDynLib hydromad sma_cmd
 cmd.sim <-
   function(DATA,
            f, e, d, shape = 0,

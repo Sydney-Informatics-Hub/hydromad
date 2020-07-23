@@ -75,6 +75,7 @@
 #' ) +
 #'   layer(panel.lines(fitted(mod1), col = "grey", lwd = 2))
 #' @export
+#' @useDynLib hydromad sma_awbm
 awbm.sim <-
   function(DATA, cap.ave,
            cap1 = 0.01 * cap.ave / area1,
